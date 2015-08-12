@@ -1,96 +1,123 @@
-jQuery(document).ready(function($){
+(function($){
+	var CIRCLE_LIMITS = [30,200];
+	var SQUARE_LIMITS = [20,150];
+
+	var MainView = Backbone.View.extend({
+		el: $('html'),
+		events: {
+			'click': 'addItem'
+		},
+		
+		initialize: function(){
+			this.collectionDraw = new Figures();
+			this.collectionDraw.bind('add', this.appendItem); 
+		},
+		
+		addItem: function(e){
+			if (!$(e.target).is('.shape')){
+				var figure = new Figure();
+				var randomshape = (iRand(0,1)) ? new Circle(): new Square();
+				randomshape.setSize(iRand(0,250));
+				figure.set({
+					x: e.pageX,
+					y: e.pageY,
+					shape: randomshape,
+					color: randomColor()
+				});
+				
+				this.collectionDraw.add(figure);
+			}
+		},
+		
+		appendItem: function(figure){
+			var itemView = new ItemView({ model: figure });
+			$('body').append(itemView.render());
+		}
 	
-	$('html').click(function(e) {
-		var target = $(e.target);
-		if (target.is('div')){
-			target.remove();
-		}else{
-			var offset = $(this).offset();
-			var coords = {x: e.pageX - offset.left, y: e.pageY - offset.top }
-			var shapesArray = ["circle","square","pgram"];
-			
-			//Get random figureName from array
-			var randomShape = shapesArray[iRand(0,shapesArray.length-1)];
-			
-			//New shape from figureName and size
-			var shape = new shapes(randomShape,iRand(10,200));
-			
-			//Generete and draw figure from shape, color and click position
-			$('body').append(
-				new figure(shape,randomColor(),coords.x,coords.y)
-			);
+	});
+	
+	var ItemView =  Backbone.View.extend({
+		tagName: 'div',
+		events: {
+			'click': 'remove'
+		},   
+		render: function(){
+			$(this.el).addClass('shape');
+			$(this.el).css(this.model.get('style'));
+			return this.el;
+		},
+		remove: function(){
+			$(this.el).remove();
+			this.model.destroy();
 		}
 	});
 	
-	//Figure for draw
-	function figure(shape,color,x,y){
-		var coords = { "left": x-shape.size/2, "top": y-shape.size/2 }
-		var background = { "background-color": color}
-		
-		//Styles combine here, shape params, screen position and background color
-		var styles = $.extend({},shape.style,coords,background);
-		
-		var container = $("<div>", {class: shape.constructor.name,css:styles});
-		return container;
-	}
+	var Figure = Backbone.Model.extend({
+		defaults: {
+			x: 0,
+			y: 0,
+			shape: {},
+			color: '#ffffff',
+			style: {}
+		},
+		initialize: function(){
+			this.on('change:shape', this.updateCss, this);
+		},
+		updateCss: function(){
+			var color = this.get('color');
+			var shape = this.get('shape');
+			var x = this.get('x');
+			var y = this.get('y');
+			var coords = { "left": x-shape.size/2, "top": y-shape.size/2 }
+			var background = { "background-color": color}
+			var css = $.extend({},shape.style,coords,background);
+			this.set({
+				style: css
+			});
+		}
+	});
 	
-	//Shapes container
-	function shapes(name,radius){
-		this.circle = function(size){
-			var rMax = 200/2;
-			var rMin = 30/2;
-			radius = size/2;
-			radius = (radius > rMax) ? rMax : radius;
-			radius = (radius < rMin) ? rMin : radius;
-			
-			this.style =  {
-				"width": radius*2,
-				"height": radius*2,
-				"-moz-border-radius": radius,
-				"-webkit-border-radius": radius,
-				"border-radius": radius
-			}
-			this.size = radius*2;
-			return this;
-		}
-		
-		this.square = function(size){
-			var sMax = 100;
-			var sMin = 15;
-			size = (size > sMax) ? sMax : size;
-			size = (size < sMin) ? sMin : size;
-			
-			this.style =  {
-				"width": size,
-				"height": size
-			}
-			this.size = size;
-			return this;
-		}
-		
-		this.pgram = function(size){
-			var sMax = 150;
-			var sMin = 80;
-			size = (size > sMax) ? sMax : size;
-			size = (size < sMin) ? sMin : size;
-			
-			this.style = {
-				"width": size,
-				"height": size*3/4,
-				"-webkit-transform": "skew(20deg)",
-				"-moz-transform": "skew(20deg)",
-				"-o-transform": "skew(20deg)"
-			}
-			this.size = size;
-			return this;
-		}
-		
-		return this[name](radius);
-	}
+	var Figures = Backbone.Collection.extend({
+		model: Figure	
+	});
 	
-	//Rounded random with interval
+	var Circle = Backbone.Collection.extend({
+		setSize: function(size){
+			size = (size > CIRCLE_LIMITS[1]) ? CIRCLE_LIMITS[1] : size;
+			size = (size < CIRCLE_LIMITS[0]) ? CIRCLE_LIMITS[0] : size;
+			this.size = size;
+			this.setStyle();
+		},
+		setStyle: function(){
+			this.style =  {
+				"width": this.size,
+				"height": this.size,
+				"-moz-border-radius": this.size/2,
+				"-webkit-border-radius": this.size/2,
+				"border-radius": this.size/2
+			}
+		}
+	});
+	
+	var Square = Backbone.Collection.extend({
+		setSize: function(size){
+			size = (size > SQUARE_LIMITS[1]) ? SQUARE_LIMITS[1] : size;
+			size = (size < SQUARE_LIMITS[0]) ? SQUARE_LIMITS[0] : size;
+			this.size = size;
+			this.setStyle();
+		},
+		setStyle: function(){
+			this.style =  {
+				"width": this.size,
+				"height": this.size
+			}
+		}
+	});
+
 	function iRand(min, max){
 		return Math.round(Math.random() * (max - min) + min);
 	}
-});
 	
+	var mainView = new MainView();
+
+})(jQuery);
