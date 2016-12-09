@@ -1,13 +1,56 @@
 <!doctype html>
 <html>
 <head>
-	<link rel="stylesheet" href="style.css">
+	<style>
+		html, body{
+		    height: 100%;
+		}
+		#wrapper{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		#screen{
+			width: 100%;
+			height: 100%;
+			padding-top: 70%;
+			position: relative;
+			background: teal;
+		}
+
+		form{
+			height: 100%;
+		}
+
+		input{    
+			height: 100pt;
+    		font-size: 100pt;
+			width: 100%;
+		}
+
+		#button{
+			display: block;
+			height: 200px;
+			width: 100%;
+			background-color: yellow;
+			color: black;
+			position: absolute;
+    		bottom: 0;
+		}
+
+	</style>
+
 </head>
 <body>
-	<script src="vendor/jquery.min.js"></script>
-	<script src="vendor/underscore-min.js"></script>
-	<script src="vendor/backbone-min.js"></script>
-	<script src="vendor/randomcolor.js"></script>
-	<script src="js/functions.js"></script>
+	<div id="wrapper">
+		<div id="screen">
+			<form>
+				<input type="text" name="text">
+				<button type="submit">
+			</form>
+		</div>
+		<a href="#" id="button">Кнопка</a>
+	</div>
 </body>
 </html>
