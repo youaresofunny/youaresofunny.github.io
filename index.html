@@ -7,6 +7,7 @@
 			width: 100%;
 			margin: 0px;
 			padding: 0px;
+			position: absolute;
 		}
 		section{
 			height: 100%;
@@ -32,40 +33,29 @@
 			background-color: #000099;
 		}
 	</style>
-	<script>
-		window.smoothScroll = function(target) {
-		    var scrollContainer = target;
-		    do { //find scroll container
-		        scrollContainer = scrollContainer.parentNode;
-		        if (!scrollContainer) return;
-		        scrollContainer.scrollTop += 1;
-		    } while (scrollContainer.scrollTop == 0);
-
-		    var targetY = 0;
-		    do { //find the top of target relatively to the container
-		        if (target == scrollContainer) break;
-		        targetY += target.offsetTop;
-		    } while (target = target.offsetParent);
-
-		    scroll = function(c, a, b, i) {
-		        i++; if (i > 30) return;
-		        c.scrollTop = a + (b - a) / 30 * i;
-		        setTimeout(function(){ scroll(c, a, b, i); }, 20);
-		    }
-		    // start scrolling
-		    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-		}
+	<script
+	  src="https://code.jquery.com/jquery-3.1.1.min.js"
+	  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	  crossorigin="anonymous">
+  	</script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			$("#next").click(function() {
+			    $('html,body').animate({
+			        scrollTop: $("#twi").offset().top},
+			        'slow');
+			});
+		});
 	</script>
 </head>
 <body>
 	<section id="one">
 	<div id="buttons">
 		<div class="buttons"></div>
-		<div id="next" class="buttons" onclick="smoothScroll(document.getElementById('twi'))"></div>
+		<div id="next" class="buttons"></div>
 	</div>
 	</section>
 	<section id="twi">
 	</section>
-
 </body>
 </html>
