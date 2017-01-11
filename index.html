@@ -2,55 +2,70 @@
 <html>
 <head>
 	<style>
-		html, body{
-		    height: 100%;
-		}
-		#wrapper{
-			width: 100%;
+		html,body{
 			height: 100%;
-			overflow: hidden;
-		}
-
-		#screen{
 			width: 100%;
-			height: 100%;
-			padding-top: 70%;
-			position: relative;
-			background: teal;
+			margin: 0px;
+			padding: 0px;
 		}
-
-		form{
+		section{
 			height: 100%;
 		}
-
-		input{    
-			height: 100pt;
-    		font-size: 100pt;
-			width: 100%;
+		#one{
+			background-color: red;
 		}
-
-		#button{
-			display: block;
-			height: 200px;
+		#twi{
+			background-color: blue;
+		}
+		#buttons{
+			height: 300px;
 			width: 100%;
 			background-color: yellow;
-			color: black;
 			position: absolute;
-    		bottom: 0;
+			bottom: 0;
 		}
-
+		.buttons{
+			height: 150px;
+			width: 100%;
+		}
+		#next{
+			background-color: #000099;
+		}
 	</style>
+	<script>
+		window.smoothScroll = function(target) {
+		    var scrollContainer = target;
+		    do { //find scroll container
+		        scrollContainer = scrollContainer.parentNode;
+		        if (!scrollContainer) return;
+		        scrollContainer.scrollTop += 1;
+		    } while (scrollContainer.scrollTop == 0);
 
+		    var targetY = 0;
+		    do { //find the top of target relatively to the container
+		        if (target == scrollContainer) break;
+		        targetY += target.offsetTop;
+		    } while (target = target.offsetParent);
+
+		    scroll = function(c, a, b, i) {
+		        i++; if (i > 30) return;
+		        c.scrollTop = a + (b - a) / 30 * i;
+		        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+		    }
+		    // start scrolling
+		    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+		}
+	</script>
 </head>
 <body>
-	<div id="wrapper">
-		<div id="screen">
-			<form>
-				<input type="text" name="text">
-				<button type="submit">
-			</form>
-		</div>
-		<a href="#" id="button">Кнопка</a>
+	<section id="one">
+	<div id="buttons">
+		<div class="buttons"></div>
+		<div id="next" class="buttons" onclick="smoothScroll(document.getElementById('twi'))"></div>
 	</div>
+	</section>
+	<section id="twi">
+	</section>
+
 </body>
 </html>
