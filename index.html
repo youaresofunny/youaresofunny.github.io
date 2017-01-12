@@ -63,7 +63,10 @@
 					   " One height: " + $("#one").height() + 
 					   " Inner height: " + window.innerHeight + 
 					   " Screen height: " + screen.height + 
-					   " Test height: " + $("#test").height();
+					   " Test height: " + $("#test").height() +
+					   " Body position / offset: " + $("body").position().top + "/" + $("body").offset().top + 
+					   " One position / offset: " + $("#one").position().top + "/" + $("#one").offset().top + 
+					   " Two position / offset: " + $("#two").position().top + "/" + $("#two").offset().top;
 			$("#debug2").text(text);
 		});
 	</script>
@@ -77,7 +80,7 @@
 			<div id="next" class="buttons"></div>
 		</div>
 	</section>
-	<section id="twi">
+	<section id="two">
 	</section>
 	<div id="test"></div>
 </body>
