@@ -39,6 +39,12 @@
 		#debug2{
 			padding-top: 10px;
 		}
+		#test{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
 	</style>
 	<script
 	  src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -54,7 +60,9 @@
 			var text = "Window height: " + $(window).height() +
 					   " Document height: " + $(document).height() +
 					   " One height: " + $("#one").height() + 
-					   " Inner height: " + window.innerHeight;
+					   " Inner height: " + window.innerHeight + 
+					   " Screen height: " + screen.height + 
+					   " Test height: " + $("#test").height();
 			$("#debug2").text(text);
 		});
 	</script>
@@ -70,5 +78,6 @@
 	</section>
 	<section id="twi">
 	</section>
+	<div id="test"></div>
 </body>
 </html>
