@@ -8,7 +8,6 @@
 			margin: 0px;
 			padding: 0px;
 			position: absolute;
-			margin-top: -8.6%;
 		}
 		section{
 			height: 100%;
@@ -33,6 +32,13 @@
 		#next{
 			background-color: #000099;
 		}
+		span{
+			font-size: 70px;
+			color: white;
+		}
+		#debug2{
+			padding-top: 10px;
+		}
 	</style>
 	<script
 	  src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -44,11 +50,18 @@
 			$("#next").click(function() {
 			    $('html,body').animate({scrollTop: $("#twi").offset().top},'slow');
 			});
+			$("#debug").text(navigator.userAgent);
+			var text = "Window height: " + $(window).height() +
+					   " Document height: " + $(document).height() +
+					   " One height: " + $("#one").height();
+			$("#debug2").text(text);
 		});
 	</script>
 </head>
 <body>
 	<section id="one">
+		<span id="debug"></span>
+		<span id="debug2"></span>
 		<div id="buttons">
 			<div class="buttons"></div>
 			<div id="next" class="buttons"></div>
