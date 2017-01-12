@@ -40,13 +40,6 @@
 		#debug2{
 			padding-top: 10px;
 		}
-		#test{
-			position: fixed;
-			top: 0;
-			bottom: 0;
-			width: 100%;
-			height: 100%;
-		}
 	</style>
 	<script
 	  src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -64,6 +57,7 @@
 					   " One height: " + $("#one").height() + 
 					   " Inner height: " + window.innerHeight + 
 					   " Screen height: " + screen.height + 
+					   " documentElement height" + document.documentElement.clientHeight +
 					   " Test height: " + $("#test").height() +
 					   " Body position / offset: " + $("body").position().top + "/" + $("body").offset().top + 
 					   " One position / offset: " + $("#one").position().top + "/" + $("#one").offset().top + 
@@ -83,6 +77,5 @@
 	</section>
 	<section id="two">
 	</section>
-	<div id="test"></div>
 </body>
 </html>
