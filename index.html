@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+	<meta name='viewport', id='viewport', content='maximum-scale=1.0, user-scalable=no'/>
 	<style>
 		html,body{
 			height: 100%;
@@ -15,7 +16,7 @@
 		#one{
 			background-color: red;
 		}
-		#twi{
+		#two{
 			background-color: blue;
 		}
 		#buttons{
@@ -55,7 +56,7 @@
 	<script type="text/javascript">
 		jQuery(document).ready(function($){
 			$("#next").click(function() {
-			    $('html,body').animate({scrollTop: $("#twi").offset().top},'slow');
+			    $('html,body').animate({scrollTop: $("#two").offset().top},'slow');
 			});
 			$("#debug").text(navigator.userAgent);
 			var text = "Window height: " + $(window).height() +
