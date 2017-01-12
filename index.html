@@ -47,6 +47,23 @@
 	  crossorigin="anonymous">
   	</script>
 	<script type="text/javascript">
+		var getIOSWindowHeight = function() {
+		    // Get zoom level of mobile Safari
+		    // Note, that such zoom detection might not work correctly in other browsers
+		    // We use width, instead of height, because there are no vertical toolbars :)
+		    var zoomLevel = document.documentElement.clientWidth / window.innerWidth;
+
+		    // window.innerHeight returns height of the visible area. 
+		    // We multiply it by zoom and get out real height.
+		    return window.innerHeight * zoomLevel;
+		};
+
+		// You can also get height of the toolbars that are currently displayed
+		var getHeightOfIOSToolbars = function() {
+		    var tH = (window.orientation === 0 ? screen.height : screen.width) -  getIOSWindowHeight();
+		    return tH > 1 ? tH : 0;
+		};
+
 		jQuery(document).ready(function($){
 			$("#next").click(function() {
 			    $('html,body').animate({scrollTop: $("#two").offset().top},'slow');
@@ -61,7 +78,8 @@
 					   " Test height: " + $("#test").height() +
 					   " Body position / offset: " + $("body").position().top + "/" + $("body").offset().top + 
 					   " One position / offset: " + $("#one").position().top + "/" + $("#one").offset().top + 
-					   " Two position / offset: " + $("#two").position().top + "/" + $("#two").offset().top;
+					   " Two position / offset: " + $("#two").position().top + "/" + $("#two").offset().top + 
+					   " TOOLBARS: " + getHeightOfIOSToolbars();
 			$("#debug2").text(text);
 		});
 	</script>
