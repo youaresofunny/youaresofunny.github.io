@@ -65,21 +65,18 @@
         padding: 0;
       }
 
-      @media only screen 
-      and (min-device-width: 600px) {
-        #wrapper {
-          width: 600px;
-          margin: 0 auto;
-        }
-      }
+
       #head_img {
         width: 100%;
       }
 
       #head_title {
         font-size: 20px;
-        margin-top: -60px;
+        margin-top: -62px;
         padding: 5px;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.3);
+        width: 100%;
         color: white;
       }
 
@@ -118,6 +115,17 @@
 
       .bottom img {
         width: 100%;
+      }
+
+      @media only screen 
+      and (min-device-width: 600px) {
+        #wrapper {
+          width: 600px;
+          margin: 0 auto;
+        }
+        #head_title{
+          width: 580px;
+        }
       }
 
     </style>
