@@ -9,8 +9,8 @@
     <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" id="svg">
       <defs>
         <radialGradient id="gradient" cx="0%" cy="50%" r="100%">
-          <stop offset="0%" stop-color="gold"/>
-          <stop offset="95%" stop-color="green"/>
+          <stop offset="0%" stop-color="gold" stop-opacity="0.7"/>
+          <stop offset="95%" stop-color="green" stop-opacity="0.3"/>
         </radialGradient>
       </defs>
       <g transform="rotate(0 100 100)" id="path_transform">
@@ -54,7 +54,7 @@
 
 
   let leftPoint = -32;
-  let leftPoint2 = -40;
+  let leftPoint2 = -64;
   let topPoint = 0;
   let gradientPoint = -50;
   let moveRight = true;
@@ -90,7 +90,7 @@
       }
       //console.log('Letft:', leftPoint);
       //console.log('Top:', topPoint);
-      //pathTransform.setAttribute('transform', `translate(${leftPoint},0)`);
+      //pathTransform.setAttribute('transform', `rotate(${gradientPoint} 100 100)`);
       if (rightSide) {
         svg.setAttribute('d', `M0 0 L100 0, C${leftPoint} ${topPoint}, ${leftPoint} ${200-topPoint} 100 200, L0 200, L0 0`)
       } else {
@@ -105,7 +105,6 @@
       }
     }
   }
-
   window.requestAnimationFrame(step(true));
 </script>
 </body>
