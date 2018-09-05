@@ -1,18 +1,112 @@
 <!doctype html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <img src="new.jpg" />
-    <style>
-      body, html {
-        padding: 0;
-        margin: 0;
+<body>
+  <div id="bg">
+    <div id="planet1">
+    </div>
+    <div id="center">
+    </div>
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" id="svg">
+      <defs>
+        <radialGradient id="gradient" cx="0%" cy="50%" r="100%">
+          <stop offset="0%" stop-color="gold"/>
+          <stop offset="95%" stop-color="green"/>
+        </radialGradient>
+      </defs>
+      <g transform="rotate(0 100 100)" id="path_transform">
+        <path d="M100 0 C-20 30, -20 170, 100 200 L200 200 L200 0 L0 0 " fill="url(#gradient)"  id="path" />
+      </g>
+    </svg>
+  </div>
+<style>
+  #bg, body {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+  }
+
+  #planet1 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #40d2101f;
+    clip-path: url(#svg); 
+  }
+
+  #center {
+    background: white;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+  }
+  #svg {
+    clip-path: circle(50%);
+  }
+</style>
+<script>
+  const svg = document.getElementById('path');
+  const centerDiv = document.getElementById('center');
+  const pathTransform = document.getElementById('path_transform');
+  const gradient = document.getElementById('gradient');
+  const r = 100;
+  const gcenter = {x: -50, y: r};
+
+
+  let leftPoint = -32;
+  let leftPoint2 = -40;
+  let topPoint = 0;
+  let gradientPoint = -50;
+  let moveRight = true;
+  let moveBot = true;
+  function step(rightSide) {
+    return (timestamp) => {
+      if (moveRight) {
+        if (leftPoint < 232) {
+          leftPoint++;
+          gradientPoint+= 0.34;
+        } else {
+          moveRight = false;
+        }
+      } else {
+        if (leftPoint2 < 240) {
+          leftPoint2++;
+          gradientPoint+= 0.4;
+        }
       }
-      img {
-        width: 100vw;
+
+      if (moveBot) {
+        if (topPoint < 50) {
+          topPoint += 0.5;
+        } else {
+          moveBot = false;
+        }
+      } else {
+        if (topPoint < 0) {
+          moveBot = false;
+        } else {
+          topPoint -= 0.5;
+        }
       }
-    </style>
-  </body>
+      //console.log('Letft:', leftPoint);
+      //console.log('Top:', topPoint);
+      //pathTransform.setAttribute('transform', `translate(${leftPoint},0)`);
+      if (rightSide) {
+        svg.setAttribute('d', `M0 0 L100 0, C${leftPoint} ${topPoint}, ${leftPoint} ${200-topPoint} 100 200, L0 200, L0 0`)
+      } else {
+        svg.setAttribute('d', `M100 0 C${leftPoint2} ${topPoint}, ${leftPoint2} ${200-topPoint} 100 200 L200 200 L200 0 L0 0 `)
+      }
+      gradient.setAttribute('cx', `${gradientPoint}%`);
+      console.log(timestamp);
+      if (timestamp < 5000) {
+        window.requestAnimationFrame(step(true));
+      } else if (timestamp < 10000) {
+        window.requestAnimationFrame(step(false));
+      }
+    }
+  }
+
+  window.requestAnimationFrame(step(true));
+</script>
+</body>
 </html>
