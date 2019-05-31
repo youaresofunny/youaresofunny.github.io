@@ -1,3 +1,4 @@
+#### Primary 
 About | Technical skills 
 ------------ | -------------
 Lopan Anton (29 y/o) | Linux 8 year: bash, nginx, ssl, docker, kubernetes 
@@ -8,7 +9,7 @@ GitHub [@youaresofunny](https://github.com/youaresofunny) | DBs and Brokers: Pos
 Telegram [@iamgig](https://t.me/iamgig) | APIs: Bitshares, Binance, Bitmex, Telegram, WeChat, Instagram, ...
 Instagram [@anlopan](http://instagram.com/anlopan) | Code review, TDD, Refactoring, Optimization, Git flow
 Email [anlopan@gmail.com](mailto:anlopan@gmail.com) | Opensource contribution
-### Timeline 
+#### Timeline 
 * 2011 elarea.ru -  **full-stack developer**
     * Custom PHP E-Commerce framework development
     * Responsive HTML, Css, jQuery  
@@ -17,13 +18,12 @@ Email [anlopan@gmail.com](mailto:anlopan@gmail.com) | Opensource contribution
     * Wordpress based enterprise ACM system development
     * Business process automation and optimization
     * Manage tasks for freelancers
-* 2014 
-	* Site4all.ru **project manager**
-	    * Managing small web development teams (up to 5 people )
-	    * Prototyping
-	    * Flow management [Client brief -> Design -> Programming -> Content]
-	* Netology.ru **full-stack developer**
-	    * Partner cabinet development 
+* 2014 Site4all.ru **project manager**
+    * Managing small web development teams (up to 5 people )
+    * Prototyping
+    * Flow management [Client brief -> Design -> Programming -> Content]
+* 2014 Netology.ru **full-stack developer**
+    * Partner cabinet development 
 * 2015 ICONIC mobile **techincal lead**
     * Full stack mobile apps development (Android, Spring, Erlang, C++)
     * Manage freelancers
@@ -39,6 +39,8 @@ Email [anlopan@gmail.com](mailto:anlopan@gmail.com) | Opensource contribution
     * New way to perform telegram bots invented
     * Communicate with open source communities (Binance, Telegram)
     * Infrastructure administration ( 10 services with replication, kubernetes )
+
+#### Extras 
 
 Achivements | Strengths 
 ------------ | -------------
