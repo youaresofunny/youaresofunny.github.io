@@ -1,13 +1,13 @@
-### About
-* Lopan Anton (29 y/o)
-* Education - 2007 - 2012 Computer science BS
-* Current Location - Russia, Tyumen
-* Relocate - ok 
-* GitHub [@youaresofunny](https://github.com/youaresofunny)
-* Telegram [@iamgig](https://t.me/iamgig)
-* Instagram [@anlopan](http://instagram.com/anlopan)
-* Email anlopan@gmail.com
-
+About | Technical skills 
+------------ | -------------
+Lopan Anton (29 y/o) | Linux 8 year: bash, nginx, ssl, docker, kubernetes 
+Education - 2007 - 2012 Computer science BS | Imperative programming: Javascript, Golang, PHP, Java
+Current Location - Russia, Tyumen | Functional programming 3 year: Javascript, Erlang, Haskell
+Relocate - ok  | Frontend skills: HTML, Grids, Vue, Canvas & Animation, SVG
+GitHub [@youaresofunny](https://github.com/youaresofunny) | DBs and Brokers: Postgres, Mysql, Mongo, NSQ, Redis, RabbitMQ 
+Telegram [@iamgig](https://t.me/iamgig) | APIs: Bitshares, Binance, Bitmex, Telegram, WeChat, Instagram, ...
+Instagram [@anlopan](http://instagram.com/anlopan) | Code review, TDD, Refactoring, Optimization, Git flow
+Email [anlopan@gmail.com](mailto:anlopan@gmail.com) | Opensource contribution
 ### Timeline 
 * 2011 elarea.ru -  **full-stack developer**
     * Custom PHP E-Commerce framework development
@@ -40,25 +40,9 @@
     * Communicate with open source communities (Binance, Telegram)
     * Infrastructure administration ( 10 services with replication, kubernetes )
 
-### Tech skills
-* Linux 8 year
-* Imperative programming 8 year, mostly: Javascript, Golang, PHP
-* Functional programming 3 year, mostly: Javascript, Erlang, Haskell
-* Frontend skills: HTML, pCss, Grids, Vue, React, Canvas & animation
-* Refactoring & Optimization
-* Can read and analyse sources in any language
-* Code review and TDD
-
-### Achivements:
-* Esoteric programming in notebook for fun (brainfuck, whitespace)
-* Made 2000+ contributions into opensource repositories
-* Decentralised worker [participation](https://www.bitshares.foundation/workers/2018-08-trusty-community-ui-p1)
-* Indonesian waste problem solve [participation](https://github.com/MPH-Bali)
-
-### Strengths: 
-* Multitask
-* Love to code
-* Learn fast x2
-* Analyst
-* Abstract thinking
-* Motivation over results
+Achivements | Strengths 
+------------ | -------------
+Esoteric programming in notebook for fun (brainfuck, whitespace) |  Love to code
+Made 2000+ contributions into opensource repositories | Learn fast x2
+Decentralised worker [participation](https://www.bitshares.foundation/workers/2018-08-trusty-community-ui-p1) | Strong Analyst
+Indonesian waste problem solve [participation](https://github.com/MPH-Bali) | Motivation over results
