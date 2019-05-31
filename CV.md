@@ -18,12 +18,12 @@
     * Business process automation and optimization
     * Manage tasks for freelancers
 * 2014 
-    * Site4all.ru **project manager**
-        * Managing small web development teams (up to 5 people )
-        * Prototyping
-        * Flow management [Client brief -> Design -> Programming -> Content]
-    * Netology.ru **full-stack developer**
-        * Partner cabinet development 
+	* Site4all.ru **project manager**
+	    * Managing small web development teams (up to 5 people )
+	    * Prototyping
+	    * Flow management [Client brief -> Design -> Programming -> Content]
+	* Netology.ru **full-stack developer**
+	    * Partner cabinet development 
 * 2015 ICONIC mobile **techincal lead**
     * Full stack mobile apps development (Android, Spring, Erlang, C++)
     * Manage freelancers
@@ -32,7 +32,7 @@
     * Lead development and code review (Golang, Vue, Nodejs)
     * Recruiting
     * Communicate with open source communities (Bitshares, Instagram)
-    * Reverse Engineering ( Instagram private API)
+    * Reverse Engenering ( instagram private api)
     * Infrastructure administration ( 15 services, docker )
     
 * 2019 Benice.tools **CTO**
@@ -42,10 +42,12 @@
 
 ### Tech skills
 * Linux 8 year
-* Imperative programming 8 years, mostly: Javascript, Golang, PHP
-* Functional programming 3 years, mostly: Javascript, Erlang, Haskell 
+* Imperative programming 8 year, mostly: Javascript, Golang, PHP
+* Functional programming 3 year, mostly: Javascript, Erlang, Haskell
+* Frontend skills: HTML, pCss, Grids, Vue, React, Canvas & animation
 * Refactoring & Optimization
 * Can read and analyse sources in any language
+* Code review and TDD
 
 ### Achivements:
 * Esoteric programming in notebook for fun (brainfuck, whitespace)
