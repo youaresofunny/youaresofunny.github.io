@@ -60,9 +60,3 @@
 * Analyst
 * Abstract thinking
 * Motivation over results
-
-### Weaknesses:
-* Obsessive thoughts to get done everything by myself
-* Need manager or assistant for better time management
-* Efficient work hours sometimes shifts into the evening
-* Concentration reduced upon motivation loss
