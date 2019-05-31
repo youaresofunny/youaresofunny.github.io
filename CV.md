@@ -2,7 +2,7 @@
 About | Technical skills 
 ------------ | -------------
 Lopan Anton (29 y/o) | Linux 8 year: bash, nginx, ssl, docker, kubernetes 
-Education - 2007 - 2012 Computer science BS | Imperative programming: Javascript, Golang, PHP, Java
+Education 2007 - 2012 Computer science BS | Imperative programming: Javascript, Golang, PHP, Java
 Current Location - Russia, Tyumen | Functional programming 3 year: Javascript, Erlang, Haskell
 Relocate - ok  | Frontend skills: HTML, Grids, Vue, Canvas & Animation, SVG
 GitHub [@youaresofunny](https://github.com/youaresofunny) | DBs and Brokers: Postgres, Mysql, Mongo, NSQ, Redis, RabbitMQ 
