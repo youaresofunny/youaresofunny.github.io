@@ -1,6 +1,5 @@
 (function () {
   'use strict';
-
   const env = {"BASE_URL":"https://dev.randomcoffee.us"};
 
   function isForumNavEvent(e) {
@@ -8,6 +7,14 @@
   }
   function isForumTitleEvent(e) {
       return e.type === 'forum-title';
+  }
+  const unallowedInsertTags = ["P","SPAN","LI","UL","OL"];
+  function insertSmart(what, where) {
+    if (unallowedInsertTags.includes(where.parentElement.tagName)) {
+      insertSmart(what, where.parentElement);
+    } else {
+      where.parentElement.insertBefore(what, where);
+    }
   }
 
   (() => {
@@ -31,7 +38,13 @@
       iframe.style.border = 'none';
       iframe.style.width = '100%';
       iframe.style.height = '100%';
+      iframe.id = 'circles-forum';
+
+      insertSmart(iframe, thisScriptTag);
+
       document.body.insertBefore(iframe, thisScriptTag);
+
+
       const sendMessage = (msg) => {
           const w = iframe.contentWindow;
           if (!w) {
