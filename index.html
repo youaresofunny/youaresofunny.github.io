@@ -1,201 +1,949 @@
-﻿<!DOCTYPE html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+  <meta name="description" content="Anton Lopan - Engineering Manager / Head of Engineering">
+  <title>Anton Lopan - CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --page: #d9d1c0;
+      --sheet: #fbf4e6;
+      --ink: #25211b;
+      --muted: #645d52;
+      --quiet: #817668;
+      --line: #d2c3aa;
+      --line-strong: #94866f;
+      --accent: #536044;
+      --shadow: 0 20px 60px rgba(43, 35, 24, 0.14);
+      --serif: "Newsreader", Georgia, serif;
+      --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--page);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.5;
+      background:
+        linear-gradient(90deg, rgba(37, 33, 27, 0.022) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(37, 33, 27, 0.016) 1px, transparent 1px),
+        var(--page);
+      background-size: 32px 32px;
+      font-variant-numeric: oldstyle-nums;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: rgba(83, 96, 68, 0.42);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      color: var(--accent);
+      text-decoration-color: currentColor;
+    }
+
+    p,
+    ul,
+    ol,
+    dl {
+      margin: 0;
+    }
+
+    ul {
+      padding-left: 1.08rem;
+    }
+
+    li + li {
+      margin-top: 0.32rem;
+    }
+
+    .sheet {
+      width: min(1120px, calc(100% - 56px));
+      margin: 36px auto 64px;
+      padding: 42px 48px 50px;
+      background:
+        linear-gradient(180deg, rgba(251, 244, 230, 0.99), rgba(247, 237, 219, 0.98)),
+        var(--sheet);
+      border: 1px solid rgba(148, 134, 111, 0.56);
+      box-shadow: var(--shadow);
+    }
+
+    .masthead {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 38px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    .identity {
+      max-width: 760px;
+    }
+
+    .kicker,
+    .label,
+    .section-index,
+    .contact-label,
+    .experience-date {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .kicker {
+      max-width: 760px;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 5.6vw, 5.75rem);
+      line-height: 0.88;
+    }
+
+    .role {
+      max-width: 700px;
+      margin-top: 0.82rem;
+      color: var(--muted);
+      font-size: clamp(1.18rem, 1.55vw, 1.42rem);
+      font-weight: 600;
+      line-height: 1.22;
+    }
+
+    .contacts {
+      align-self: stretch;
+      padding-left: 24px;
+      border-left: 1px solid var(--line);
+    }
+
+    .location {
+      margin-bottom: 1.45rem;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.28;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.68rem;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 12px;
+      align-items: baseline;
+    }
+
+    .contact-label {
+      color: var(--quiet);
+      font-size: 0.66rem;
+    }
+
+    .contact-row a {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      font-weight: 600;
+    }
+
+    .print-button {
+      margin-top: 1.65rem;
+      padding: 0.58rem 0.76rem;
+      color: var(--sheet);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      cursor: pointer;
+    }
+
+    .print-button:hover {
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 30px;
+      padding: 22px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .summary .label {
+      color: var(--quiet);
+    }
+
+    .summary p {
+      max-width: 900px;
+      font-size: 1.05rem;
+      line-height: 1.54;
+    }
+
+    .document-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) 310px;
+      gap: 40px;
+      padding-top: 26px;
+      align-items: start;
+    }
+
+    .main-column,
+    .side-column {
+      display: grid;
+      gap: 26px;
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 16px;
+      padding-top: 2px;
+    }
+
+    .section + .section {
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-index {
+      color: var(--quiet);
+      padding-top: 0.24rem;
+    }
+
+    h2 {
+      margin-bottom: 0.86rem;
+      font-size: clamp(1.36rem, 2vw, 1.86rem);
+      line-height: 1.05;
+    }
+
+    h3 {
+      font-size: 1.02rem;
+      line-height: 1.25;
+    }
+
+    .fit-list {
+      display: grid;
+      gap: 0.82rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    .fit-list li {
+      display: grid;
+      grid-template-columns: 196px minmax(0, 1fr);
+      gap: 22px;
+      padding-top: 0.86rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .fit-list li:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .fit-list p,
+    .experience-body li,
+    .text-list li,
+    .side-section p,
+    .stack-group dd {
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0;
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 124px minmax(0, 1fr);
+      gap: 22px;
+      padding: 0.96rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-item:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .experience-date {
+      color: var(--accent);
+      font-size: 0.68rem;
+      padding-top: 0.24rem;
+    }
+
+    .experience-body h3 {
+      margin-bottom: 0.38rem;
+    }
+
+    .experience-body h3 span {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .experience-body ul {
+      font-size: 0.95rem;
+      line-height: 1.44;
+    }
+
+    .side-column {
+      padding-left: 24px;
+      border-left: 1px solid var(--line);
+    }
+
+    .side-section + .side-section {
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .side-section h2 {
+      margin-bottom: 0.72rem;
+      font-size: 1.18rem;
+    }
+
+    .strengths {
+      display: grid;
+      gap: 0.68rem;
+    }
+
+    .strengths dt,
+    .stack-group dt {
+      margin-bottom: 0.12rem;
+      color: var(--ink);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .strengths dd,
+    .stack-group dd {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+
+    .text-list {
+      padding-left: 1rem;
+      font-size: 0.93rem;
+      line-height: 1.42;
+    }
+
+    .stack-group {
+      display: grid;
+      gap: 0.66rem;
+    }
+
+    .stack-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.38rem 0.6rem;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.35;
+    }
+
+    .stack-inline li {
+      margin: 0;
+    }
+
+    .stack-inline li:not(:last-child)::after {
+      content: ",";
+    }
+
+    @media (max-width: 980px) {
+      .sheet {
+        width: min(100% - 32px, 820px);
+        padding: 34px;
+      }
+
+      .masthead,
+      .summary,
+      .document-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contacts {
+        padding-top: 22px;
+        padding-left: 0;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .summary {
+        gap: 10px;
+      }
+
+      .side-column {
+        padding-left: 0;
+        border-left: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        background-size: 22px 22px;
+      }
+
+      .sheet {
+        width: 100%;
+        margin: 0;
+        padding: 22px 18px 38px;
+        border-right: 0;
+        border-left: 0;
+        box-shadow: none;
+      }
+
+      .masthead {
+        gap: 24px;
+        padding-bottom: 24px;
+      }
+
+      .identity {
+        max-width: none;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 16vw, 4.4rem);
+      }
+
+      .role {
+        font-size: 1.12rem;
+      }
+
+      .contact-row {
+        grid-template-columns: 72px minmax(0, 1fr);
+      }
+
+      .print-button {
+        width: 100%;
+      }
+
+      .document-grid {
+        gap: 30px;
+      }
+
+      .section {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .section-index {
+        padding-top: 0;
+      }
+
+      .fit-list li,
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 0.42rem;
+      }
+
+      .experience-date {
+        padding-top: 0;
+      }
+    }
+
+    @media print {
+      @page {
+        margin: 12mm;
+      }
+
+      html,
+      body {
+        background: #fff;
+      }
+
+      body {
+        color: #111;
+        font-size: 9.6pt;
+        line-height: 1.34;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .sheet {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+        background: #fff;
+      }
+
+      .masthead {
+        grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.82fr);
+        gap: 18px;
+        align-items: start;
+        padding-bottom: 8px;
+      }
+
+      .print-button {
+        display: none;
+      }
+
+      h1 {
+        font-size: 30pt;
+      }
+
+      .role {
+        max-width: none;
+        margin-top: 4px;
+        font-size: 11pt;
+      }
+
+      .contacts {
+        padding-left: 12px;
+        border-left: 0.5pt solid #cfc5b3;
+      }
+
+      .location {
+        margin: 0 0 6px;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 2px;
+      }
+
+      .contact-row {
+        display: grid;
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: 6px;
+      }
+
+      .contact-label {
+        margin-right: 0;
+      }
+
+      .summary {
+        display: grid;
+        grid-template-columns: 58px minmax(0, 1fr);
+        gap: 12px;
+        padding: 8px 0 10px;
+      }
+
+      .summary .label {
+        display: block;
+      }
+
+      .summary p {
+        max-width: none;
+        font-size: 9.5pt;
+        line-height: 1.34;
+      }
+
+      .document-grid {
+        display: block;
+        padding-top: 8px;
+      }
+
+      .section {
+        break-inside: auto;
+        display: block;
+      }
+
+      .section + .section,
+      .side-section + .side-section {
+        padding-top: 10px;
+        margin-top: 10px;
+      }
+
+      .section-index {
+        display: none;
+      }
+
+      h2 {
+        margin-bottom: 5px;
+        font-size: 12.2pt;
+      }
+
+      .fit-list {
+        gap: 0;
+      }
+
+      .fit-list li {
+        break-inside: avoid;
+        grid-template-columns: 168px minmax(0, 1fr);
+        gap: 12px;
+        padding: 6px 0;
+      }
+
+      .fit-list h3 {
+        font-size: 9.8pt;
+        line-height: 1.15;
+      }
+
+      .fit-list p {
+        font-size: 9.4pt;
+        line-height: 1.34;
+      }
+
+      .experience-item {
+        break-inside: avoid;
+        grid-template-columns: 84px minmax(0, 1fr);
+        gap: 10px;
+        padding: 5px 0;
+      }
+
+      .experience-body ul {
+        font-size: 9.2pt;
+        line-height: 1.34;
+      }
+
+      .side-column {
+        display: block;
+        padding-left: 0;
+        margin-top: 10px;
+        border-left: 0;
+      }
+
+      .side-section + .side-section {
+        padding-top: 8px;
+        margin-top: 8px;
+        border-top: 0.5pt solid #d7cebd;
+      }
+
+      .side-section {
+        break-inside: avoid;
+      }
+
+      .side-section h2 {
+        font-size: 11pt;
+      }
+
+      .strengths dd,
+      .stack-group dd,
+      .text-list {
+        font-size: 8.9pt;
+        line-height: 1.32;
+      }
+    }
+  </style>
 </head>
 
-<body class="stackedit">
-  <div class="stackedit__html">
-    <h1 id="anton-lopan">Anton Lopan</h1>
-    <p><strong>Founding Engineer / Principal Backend Engineer</strong></p>
-    <p>Tyumen, Russia · Open to relocation · GitHub <a href="https://github.com/youaresofunny">@youaresofunny</a> · Telegram <a href="https://t.me/iamgig">@iamgig</a> · Email <a href="mailto:anlopan@gmail.com">anlopan@gmail.com</a> · Instagram <a href="http://instagram.com/anlopan">@anlopan</a></p>
-    <p>Hands-on engineer with 15+ years building backend, infrastructure, fintech, and crypto systems. Strongest in taking ambiguous product ideas and turning them into production software: core services, workflow orchestration, financial logic, external integrations, and operating models that can survive real load. Best fit for startup and early-stage teams that need a builder who can design architecture, write core code, and move quickly across product and infrastructure boundaries.</p>
-    <h4 id="core-strengths">Core Strengths</h4>
-    <table>
-      <thead>
-        <tr>
-          <th>Area</th>
-          <th>Focus</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Backend Systems</td>
-          <td>Go, TypeScript / Node.js, Erlang, C, Python, API design, service architecture</td>
-        </tr>
-        <tr>
-          <td>Workflow &amp; Orchestration</td>
-          <td>Temporal, long-running processes, retries, idempotency, event-driven flows, workflow architecture, execution models</td>
-        </tr>
-        <tr>
-          <td>Financial &amp; Crypto Systems</td>
-          <td>Ledgers, payment flows, virtual cards, exchanges, blockchain integrations, partner APIs</td>
-        </tr>
-        <tr>
-          <td>Data &amp; Infrastructure</td>
-          <td>PostgreSQL, Temporal, Cassandra, MongoDB, Redis, RabbitMQ, NSQ, Docker, Kubernetes, Linux</td>
-        </tr>
-        <tr>
-          <td>Engineering Depth</td>
-          <td>Refactoring, code review, TDD, E2E testing, automation, monitoring, reverse engineering</td>
-        </tr>
-      </tbody>
-    </table>
-    <h4 id="selected-projects">Selected Projects</h4>
-    <ul>
-      <li><strong>Large Fintech Systems</strong>: Designed and implemented ledger and accounting services, crypto deposit and withdrawal pipelines, and partner integrations for high-load fintech products operating under real operational and compliance constraints.</li>
-      <li><strong>BitShares Ecosystem Products</strong>: Built and led crypto product development in the BitShares space, combining backend architecture, exchange-domain knowledge, community coordination, and hands-on protocol-oriented engineering.</li>
-      <li><strong>Contracts</strong>: Designed and implemented a plugin-driven workflow and agent execution engine in Go with Temporal, including dynamic workflow definitions, runtime extensibility, and MCP-style tool integration for agentic and process-heavy systems.</li>
-    </ul>
-    <h4 id="selected-highlights">Selected Highlights</h4>
-    <ul>
-      <li>Worked extensively with Temporal to redesign business-critical fintech processes around durable workflow execution instead of fragile service-to-service coordination.</li>
-      <li>Worked across fintech, crypto, infrastructure, and AI-agent style systems where product boundaries, technical constraints, and operating models were still being discovered.</li>
-      <li>Built products from scratch across backend, platform, and product surfaces, covering core services, integrations, infrastructure, and developer-facing tooling.</li>
-    </ul>
-    <h4 id="technical-stack">Technical Stack</h4>
-    <table>
-      <thead>
-        <tr>
-          <th>Category</th>
-          <th>Stack</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Languages</td>
-          <td>Go, TypeScript, JavaScript, Erlang, C, Python, PHP</td>
-        </tr>
-        <tr>
-          <td>Backend</td>
-          <td>REST APIs, GraphQL, Temporal, workflow systems, service decomposition, third-party integrations</td>
-        </tr>
-        <tr>
-          <td>Data</td>
-          <td>PostgreSQL, Cassandra, MongoDB, Redis, MySQL</td>
-        </tr>
-        <tr>
-          <td>Infrastructure</td>
-          <td>Temporal, Docker, Kubernetes, Linux, CI/CD, monitoring, operational automation</td>
-        </tr>
-        <tr>
-          <td>Domains</td>
-          <td>Fintech, crypto, exchanges, bots, infrastructure, AI agents</td>
-        </tr>
-      </tbody>
-    </table>
-    <h4 id="experience">Experience</h4>
-    <ul>
-      <li>
-        <p><strong>Aug 2023 - Present, Contracts</strong></p>
-        <ul>
-          <li>Built and improved backend architecture for large fintech systems with a focus on reliability, operational clarity, and delivery speed.</li>
-          <li>Designed and implemented crypto deposit and withdrawal services for Ethereum, TRON, and Arbitrum networks.</li>
-          <li>Redesigned critical product flows around Temporal and led a team of 7 developers through workflow architecture, migration, and delivery transition.</li>
-          <li>Designed and implemented ledger and accounting services for high-throughput financial operations.</li>
-        </ul>
-      </li>
-      <li>
-        <p><strong>Aug 2022 - June 2023 Go Backend Engineer</strong> at <a href="https://fluid.ch/" target="_blank">Fluid.ch</a></p>
-        <ul>
-          <li>Integrated partner APIs including Currencycloud, ComplyAdvantage, Sumsub, and Genesis.</li>
-          <li>Integrated smart contracts on Arbitrum and Ethereum mainnet.</li>
-          <li>Refactored key business processes into Temporal workflows and worked hands-on with long-running, workflow-based execution patterns.</li>
-        </ul>
-      </li>
-      <li>
-        <p><strong>Jan - Aug 2022 Go Backend Engineer</strong> at <a href="https://mercuryo.io/" target="_blank">Mercuryo.io</a></p>
-        <ul>
-          <li>Refactored core backend services and handled production maintenance in a live fintech environment.</li>
-          <li>Contributed to migration from PostgreSQL to Amazon Keyspaces.</li>
-        </ul>
-      </li>
-      <li>
-        <p><strong>2020-2021 Principal Full Stack Engineer</strong> at <a href="https://peerboard.com" target="_blank">Peerboard</a></p>
-        <ul>
-          <li>Built the platform from scratch using Go, GraphQL, TypeScript, and React.</li>
-          <li>Researched and implemented embedded-site technologies.</li>
-          <li>Developed domain-connect automation.</li>
-        </ul>
-      </li>
-      <li>
-        <p><strong>2019 CTO</strong> at Benice.tools</p>
-        <ul>
-          <li>Defined technical vision and stayed hands-on across development, architecture, and infrastructure.</li>
-          <li>Designed a novel execution model for Telegram bots.</li>
-          <li>Ran infrastructure with 10 replicated services on Kubernetes.</li>
-        </ul>
-      </li>
-      <li>
-        <p><strong>2016-2019 CTO</strong> at <a href="https://github.com/Trendever" target="_blank">Trendever</a> &amp; <a href="https://github.com/TrustyFund" target="_blank">Trusty.fund</a></p>
-        <ul>
-          <li>Led product development, architecture, and infrastructure for crypto products in the BitShares ecosystem.</li>
-          <li>Stayed hands-on with backend development and code review across Go, Vue, and Node.js.</li>
-          <li>Performed reverse engineering of the Instagram private API.</li>
-          <li>Operated infrastructure across 15 services with Docker.</li>
-        </ul>
-      </li>
-      <li>
-        <p><strong>2015 Technical Lead</strong> at ICONIC Mobile</p>
-        <ul>
-          <li>Built full-stack systems for mobile products across Android, Spring, Erlang, and C++.</li>
-          <li>Administered infrastructure including Git hosting, SSH, and background services.</li>
-        </ul>
-      </li>
-      <li>
-        <p><strong>2014 Project Manager</strong> at Site4all.ru</p>
-        <ul>
-          <li>Managed small web development teams (up to 5 people).</li>
-          <li>Managed delivery flow from client brief to design, development, and content.</li>
-        </ul>
-      </li>
-      <li>
-        <p><strong>2012-2013 Full-stack Developer</strong> at Etagi.com</p>
-        <ul>
-          <li>Developed WordPress-based enterprise CMS systems.</li>
-          <li>Improved and automated business processes.</li>
-        </ul>
-      </li>
-      <li>
-        <p><strong>2011 Full-stack Developer</strong> at Elarea.ru</p>
-        <ul>
-          <li>Developed a custom PHP e-commerce framework.</li>
-          <li>Built responsive interfaces with HTML, CSS, and jQuery.</li>
-        </ul>
-      </li>
-    </ul>
-    <br/>
-    <h4 id="how-i-work">How I Work</h4>
-    <table>
-      <thead>
-        <tr>
-          <th>Trait</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Zero-to-one execution</td>
-          <td>Comfortable starting from ambiguity, defining technical shape early, and building the first production version myself.</td>
-        </tr>
-        <tr>
-          <td>Hands-on ownership</td>
-          <td>Prefer staying close to core code, architecture, infrastructure, and operational consequences rather than delegating the hard parts away.</td>
-        </tr>
-        <tr>
-          <td>Systems thinking</td>
-          <td>Strongest in process-heavy systems where business rules, integrations, data flow, and reliability all matter at once.</td>
-        </tr>
-        <tr>
-          <td>Learning curve</td>
-          <td>Fast learner with deep open-source exposure and enough range to move between fintech, crypto, infrastructure, and agent-oriented systems.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<body>
+  <main class="sheet">
+    <header class="masthead">
+      <div class="identity">
+        <div>
+          <p class="kicker">Engineering Manager / Head of Engineering / Principal Engineering Lead</p>
+          <h1>Anton Lopan</h1>
+          <p class="role">Technical engineering leader for fintech infrastructure, high-load backend systems, and production operations.</p>
+        </div>
+      </div>
+
+      <aside class="contacts" aria-label="Contact information">
+        <p class="location">Tyumen, Russia<br>Open to relocation</p>
+        <div class="contact-list">
+          <div class="contact-row">
+            <span class="contact-label">GitHub</span>
+            <a href="https://github.com/youaresofunny">@youaresofunny</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Telegram</span>
+            <a href="https://t.me/iamgig">@iamgig</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Email</span>
+            <a href="mailto:anlopan@gmail.com">anlopan@gmail.com</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Instagram</span>
+            <a href="http://instagram.com/anlopan">@anlopan</a>
+          </div>
+        </div>
+        <button class="print-button" type="button" onclick="window.print()">Print / PDF</button>
+      </aside>
+    </header>
+
+    <section class="summary" aria-labelledby="summary-title">
+      <h2 class="label" id="summary-title">Profile</h2>
+      <p>Engineering manager and hands-on systems engineer with 15+ years in backend, infrastructure, fintech, crypto, and production operations. Managed engineering groups up to ~20 engineers in CTO roles, conducted hiring and interviews, led delivery planning, gave feedback, controlled engineering quality, and organized work around incoming business tasks. Strong in partnering with product and business teams, turning requirements into technical plans, coordinating cross-team delivery, operating critical systems, and improving incident, problem, change, risk, monitoring, and security processes. Best fit for teams that need a technical leader who can manage engineers, protect production quality, defend architectural decisions, and still understand the system deeply.</p>
+    </section>
+
+    <div class="document-grid">
+      <div class="main-column">
+        <section class="section" aria-labelledby="fit-title">
+          <span class="section-index">01</span>
+          <div>
+            <h2 id="fit-title">Fit For The Role</h2>
+            <ul class="fit-list">
+              <li>
+                <h3>Engineering direction and team operations</h3>
+                <p>Managed engineering groups up to ~20 engineers in CTO roles, including hiring, interviews, feedback, workload planning, delivery organization, code review culture, and engineering quality control.</p>
+              </li>
+              <li>
+                <h3>High-load fintech reliability</h3>
+                <p>Redesigned critical financial flows around Temporal, durable execution, retries, idempotency, and operational visibility, leading a 7-developer delivery and migration effort.</p>
+              </li>
+              <li>
+                <h3>Incident, change and problem management</h3>
+                <p>Built and used operational routines around incident response, root-cause/problem analysis, change control, risk management, monitoring, health models, and runbooks.</p>
+              </li>
+              <li>
+                <h3>Product, business and vendor partnership</h3>
+                <p>Worked with product, business stakeholders, external providers, and partner APIs, including Currencycloud, ComplyAdvantage, Sumsub, Genesis, blockchain networks, and other business-critical integrations.</p>
+              </li>
+              <li>
+                <h3>Infrastructure and multi-service operations</h3>
+                <p>Operated Docker, Kubernetes, and Linux-based service environments, including replicated services, CI/CD, monitoring, access discipline, security practices, and production support.</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="experience-title">
+          <span class="section-index">02</span>
+          <div>
+            <h2 id="experience-title">Experience</h2>
+            <div class="timeline">
+              <article class="experience-item">
+                <div class="experience-date">Aug 2023 - Present</div>
+                <div class="experience-body">
+                  <h3>Contracts</h3>
+                  <ul>
+                    <li>Led a team of 7 developers through workflow architecture, migration planning, workload coordination, quality control, and delivery transition.</li>
+                    <li>Partnered with product and business stakeholders to clarify incoming fintech tasks, turn them into technical plans, and manage delivery risk.</li>
+                    <li>Redesigned critical product flows around Temporal, durable workflow execution, retries, idempotency, and operational visibility.</li>
+                    <li>Built and improved backend architecture for large fintech systems with a focus on reliability, incident resistance, operational clarity, and delivery speed.</li>
+                    <li>Designed and implemented crypto deposit and withdrawal services for Ethereum, TRON, and Arbitrum networks.</li>
+                    <li>Designed and implemented ledger and accounting services for high-throughput financial operations.</li>
+                    <li>Supported engineering quality through code review, mentoring, process discipline, and production ownership.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="experience-item">
+                <div class="experience-date">Aug 2022 - Jun 2023</div>
+                <div class="experience-body">
+                  <h3>Go Backend Engineer <span>at <a href="https://fluid.ch/" target="_blank" rel="noreferrer">Fluid.ch</a></span></h3>
+                  <ul>
+                    <li>Integrated partner and vendor APIs including Currencycloud, ComplyAdvantage, Sumsub, and Genesis.</li>
+                    <li>Integrated smart contracts on Arbitrum and Ethereum mainnet.</li>
+                    <li>Refactored key business processes into Temporal workflows with a focus on long-running execution, reliability, retries, and operational control.</li>
+                    <li>Worked with production fintech integrations where change control, incident response, partner coordination, and service continuity mattered.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="experience-item">
+                <div class="experience-date">Jan - Aug 2022</div>
+                <div class="experience-body">
+                  <h3>Go Backend Engineer <span>at <a href="https://mercuryo.io/" target="_blank" rel="noreferrer">Mercuryo.io</a></span></h3>
+                  <ul>
+                    <li>Refactored core backend services and handled production maintenance in a live high-load fintech environment.</li>
+                    <li>Contributed to migration from PostgreSQL to Amazon Keyspaces while balancing operational risk, service continuity, and delivery constraints.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="experience-item">
+                <div class="experience-date">2020 - 2021</div>
+                <div class="experience-body">
+                  <h3>Principal Full Stack Engineer <span>at <a href="https://peerboard.com" target="_blank" rel="noreferrer">Peerboard</a></span></h3>
+                  <ul>
+                    <li>Built the platform from scratch using Go, GraphQL, TypeScript, and React.</li>
+                    <li>Partnered closely with product to shape requirements, technical scope, and implementation priorities.</li>
+                    <li>Researched and implemented embedded-site technologies and production integration patterns.</li>
+                    <li>Developed domain-connect automation.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="experience-item">
+                <div class="experience-date">2019</div>
+                <div class="experience-body">
+                  <h3>CTO <span>at Benice.tools</span></h3>
+                  <ul>
+                    <li>Managed engineering direction, hiring/interviews, feedback, delivery planning, and engineering quality while staying hands-on across architecture and infrastructure.</li>
+                    <li>Built team processes for task intake, workload coordination, code review, release discipline, and production support.</li>
+                    <li>Ran infrastructure with 10 replicated services on Kubernetes, including operational routines, monitoring, incident response, and change control.</li>
+                    <li>Designed a reusable execution model for Telegram bots with runtime extensibility and fast product iteration.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="experience-item">
+                <div class="experience-date">2016 - 2019</div>
+                <div class="experience-body">
+                  <h3>CTO <span>at <a href="https://github.com/Trendever" target="_blank" rel="noreferrer">Trendever</a> &amp; <a href="https://github.com/TrustyFund" target="_blank" rel="noreferrer">Trusty.fund</a></span></h3>
+                  <ul>
+                    <li>Led product development, architecture, infrastructure, hiring, interviews, delivery planning, and engineering quality for crypto products in the BitShares ecosystem.</li>
+                    <li>Managed engineering work across teams up to ~20 engineers, including distributed coordination, feedback, code review, and workload control.</li>
+                    <li>Stayed hands-on with backend development and technical review across Go, Vue, and Node.js.</li>
+                    <li>Performed reverse engineering of the Instagram private API.</li>
+                    <li>Operated infrastructure across 15 Docker-based services, including monitoring, incident handling, change management, access discipline, and production support.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="experience-item">
+                <div class="experience-date">2015</div>
+                <div class="experience-body">
+                  <h3>Technical Lead <span>at ICONIC Mobile</span></h3>
+                  <ul>
+                    <li>Built full-stack systems for mobile products across Android, Spring, Erlang, and C++.</li>
+                    <li>Led technical workstreams, reviewed implementation decisions, and coordinated delivery across backend, mobile, and infrastructure tasks.</li>
+                    <li>Administered infrastructure including Git hosting, SSH, access control, and background services.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="experience-item">
+                <div class="experience-date">2014</div>
+                <div class="experience-body">
+                  <h3>Project Manager <span>at Site4all.ru</span></h3>
+                  <ul>
+                    <li>Managed small web development teams up to 5 people.</li>
+                    <li>Managed delivery flow from client brief to technical task breakdown, design, development, content, and release.</li>
+                    <li>Coordinated client expectations, workload, quality, and delivery deadlines across small teams.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="experience-item">
+                <div class="experience-date">2012 - 2013</div>
+                <div class="experience-body">
+                  <h3>Full-stack Developer <span>at Etagi.com</span></h3>
+                  <ul>
+                    <li>Developed WordPress-based enterprise CMS systems.</li>
+                    <li>Improved and automated business processes.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="experience-item">
+                <div class="experience-date">2011</div>
+                <div class="experience-body">
+                  <h3>Full-stack Developer <span>at Elarea.ru</span></h3>
+                  <ul>
+                    <li>Developed a custom PHP e-commerce framework.</li>
+                    <li>Built responsive interfaces with HTML, CSS, and jQuery.</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="side-column">
+        <section class="side-section" aria-labelledby="strengths-title">
+          <h2 id="strengths-title">Core Strengths</h2>
+          <dl class="strengths">
+            <div>
+              <dt>Engineering Leadership</dt>
+              <dd>Managing teams up to ~20 engineers, feedback, hiring, interviews, onboarding, workload planning, engineering quality.</dd>
+            </div>
+            <div>
+              <dt>Product Partnership</dt>
+              <dd>Business-to-technical translation, task intake, technical requirements, cross-team delivery, vendor and partner integrations.</dd>
+            </div>
+            <div>
+              <dt>Production Operations</dt>
+              <dd>Incident management, problem management, change management, risk control, runbooks, monitoring, health models.</dd>
+            </div>
+            <div>
+              <dt>Infrastructure</dt>
+              <dd>Linux, Docker, Kubernetes, cloud-oriented and network architecture, system and application operations, high-load fintech services.</dd>
+            </div>
+            <div>
+              <dt>Backend Architecture</dt>
+              <dd>Go, TypeScript / Node.js, Erlang, C, Python, API design, Temporal, ledgers, payments, crypto rails.</dd>
+            </div>
+            <div>
+              <dt>Process Discipline</dt>
+              <dd>Security practices, access control, documented processes, regulations, instructions, team adoption.</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="side-section" aria-labelledby="highlights-title">
+          <h2 id="highlights-title">Operating Profile</h2>
+          <ul class="text-list">
+            <li>Led engineering groups up to ~20 engineers in CTO roles and directly led a 7-developer migration and delivery team in fintech.</li>
+            <li>Conducted hiring, interviews, onboarding, regular feedback, task planning, and engineering quality control.</li>
+            <li>Partnered with product, business, and external providers to convert incoming work into technical requirements and production-ready releases.</li>
+            <li>Applied incident, problem, change, and risk management practices around production systems.</li>
+            <li>Interested in using automation and agent-based workflows to reduce SRE toil around triage, runbooks, health checks, change review, and postmortems.</li>
+          </ul>
+        </section>
+
+        <section class="side-section" aria-labelledby="lead-title">
+          <h2 id="lead-title">How I Lead</h2>
+          <ul class="text-list">
+            <li>Set direction, grow ownership, and keep engineering quality visible.</li>
+            <li>Clarify business goals and negotiate scope, risk, and tradeoffs early.</li>
+            <li>Build repeatable incident, problem, change, monitoring, and support practices.</li>
+            <li>Stay close enough to architecture, code, and infrastructure to guide senior engineers.</li>
+            <li>Document processes and turn them into working team habits.</li>
+          </ul>
+        </section>
+
+        <section class="side-section" aria-labelledby="stack-title">
+          <h2 id="stack-title">Technical Stack</h2>
+          <dl class="stack-group">
+            <div>
+              <dt>Leadership</dt>
+              <dd>Team management, hiring, interviews, feedback, delivery planning, workload management, product partnership, vendor management.</dd>
+            </div>
+            <div>
+              <dt>Operations</dt>
+              <dd>Incident management, problem management, change management, risk management, ITIL practices, monitoring, health models, runbooks, SRE practices.</dd>
+            </div>
+            <div>
+              <dt>Infrastructure</dt>
+              <dd>Cloud operations, network architecture, system operations, application operations, high-load systems, Docker, Kubernetes, Linux, CI/CD.</dd>
+            </div>
+            <div>
+              <dt>Engineering</dt>
+              <dd>Go, TypeScript, JavaScript, Erlang, C, Python, PHP, REST APIs, GraphQL, Temporal, workflow systems, service decomposition.</dd>
+            </div>
+            <div>
+              <dt>Data &amp; Domains</dt>
+              <dd>PostgreSQL, Cassandra, MongoDB, Redis, MySQL, fintech, crypto, exchanges, infrastructure, OpenSource.</dd>
+            </div>
+          </dl>
+        </section>
+      </aside>
+    </div>
+  </main>
 </body>
 </html>
